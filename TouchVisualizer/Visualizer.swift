@@ -179,6 +179,8 @@ extension Visualizer {
                 }
                 
                 log(touch)
+            @unknown default:
+                fatalError("Unhandled UITouch.phase case")
             }
         }
     }
@@ -212,6 +214,8 @@ extension Visualizer {
             case .stationary: phase = "S"
             case .ended: phase = "E"
             case .cancelled: phase = "C"
+            @unknown default:
+                fatalError("Unhandled UITouch.phase case")
             }
             
             let x = String(format: "%.02f", view.center.x)
